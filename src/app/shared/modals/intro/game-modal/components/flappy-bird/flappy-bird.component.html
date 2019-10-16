@@ -1,0 +1,40 @@
+<div class="pf-flappy-bird">
+  <div class="pf-flappy-bird__header">
+    <h5>
+      Flappy Bird Example
+    </h5>
+    <p>
+      <small>
+        Below is the example on how a simple flappy bird game works.
+        <br>
+      </small>
+      <i>Press space bar to play with the game</i>
+    </p>
+  </div>
+  <div class="pf-flappy-bird__body">
+    <div class="pf-flappy-bird__tasks">
+      <div class="pf-flappy-bird__tasks-header">
+        <h5>Tasks</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <small><i>Complete the tasks to proceed</i></small>
+        </li>
+        <li class="list-group-item" [class.task-completed]="tasks1Complete">
+          <small>Score a point</small>
+        </li>
+        <li class="list-group-item" [class.task-completed]="tasks2Complete">
+          <small>Score 3 points ({{ score }} / 3)</small>
+        </li>
+        <li class="list-group-item" [class.task-completed]="tasks3Complete">
+          <small>Score 5 points ({{ score }} / 5)</small>
+        </li>
+      </ul>
+    </div>
+    <div class="pf-flappy-bird__content">
+      <div id="pfFlappyBirdCanvas" class="pf-flappy-bird__canvas-container">
+
+      </div>
+    </div>
+  </div>
+</div>

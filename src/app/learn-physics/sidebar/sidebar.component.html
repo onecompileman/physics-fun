@@ -1,0 +1,18 @@
+<div class="pf-sidebar">
+  <div class="pf-sidebar__header">
+    <i class="fa fa-book"></i> &nbsp;
+    Learning Content
+  </div>
+  <div class="pf-sidebar__body">
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let item of navItems; let i = index;" routerLinkActive="active-nav"
+        [routerLinkActiveOptions]="{ exact: true }" class="list-group-item pf-sidebar__nav-item">
+        <a [routerLink]="item.path">{{ item.text }} <br>
+          <small>
+            {{ item.description }}
+          </small>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

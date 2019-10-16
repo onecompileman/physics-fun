@@ -1,0 +1,87 @@
+<div class="pf-game-modal">
+  <div class="pf-game-modal__header">
+    <div>
+      <img src="/assets/img/rocket.png" height="50">&nbsp;
+      <h4>Games</h4>
+    </div>
+    <div>
+      <a (click)="bsModalRef.hide()">x</a>
+    </div>
+  </div>
+  <div class="pf-game-modal__body">
+    <div class="pf-game-modal__slider-container">
+      <!-- Slide 1 -->
+      <div class="pf-game-modal__slider-item" *ngIf="currentSlide === 1">
+        <div class="pf-game-modal__game-header">
+          <div class="pf-game-modal__game-title">
+            <div class="pf-game-modal__game-border"></div>
+            <h4>About Game</h4>
+            <p>A game is a structured form of play, usually undertaken for enjoyment and sometimes used as an
+              educational tool. Games are distinct from work, which is usually carried out for remuneration, and from
+              art, which is more often an expression of aesthetic or ideological elements.</p>
+            <p>This course will show example on how physics can be used in computer games</p>
+            <br>
+            <div class="btn btn-danger" (click)="next()">
+              Start Course
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="pf-game-modal__slider-item" *ngIf="currentSlide === 2">
+        <div class="pf-game-modal__bird">
+          <div class="pf-game-modal__bird-header">
+            <h5>About Flappy Bird</h5>
+            <p><small>
+                Flappy Bird is a mobile game developed by Vietnamese video game artist and programmer Dong Nguyen, under
+                his game development company dotGears. The game is a side-scroller where the player controls a bird,
+                attempting to fly between columns of green pipes without hitting them.
+              </small></p>
+          </div>
+          <div class="pf-game-modal__bird-body">
+            <div class="pf-game-modal__bird-image">
+              <img src="./assets/img/flappy-bird.png" alt="Flappy Bird">
+            </div>
+            <div class="pf-game-modal__bird-content">
+              <p><b>Flappy Bird</b> is the best example of a game that greatly utilizes the use of physics</p>
+              <p>Below are the concepts in Physics that Flappy bird uses:</p>
+              <ul>
+                <li><b>Velocity</b> - What makes the obstacles or pipes move its position</li>
+                <li><b>Gravity</b> - What makes the bird falls down the screen</li>
+                <li><b>Acceleration</b> - What makes the bird falls down faster as time pases</li>
+                <li><b>Force</b> - What makes the bird fly higher</li>
+                <li><b>Collision</b>- What makes the game over when bird hits the obstacles</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="pf-game-modal__slider-item" *ngIf="currentSlide === 3">
+        <pf-flappy-bird (completed)="onFlappyBirdCompleted()"></pf-flappy-bird>
+      </div>
+      <!-- Slide 4 -->
+      <div class="pf-game-modal__slider-item" *ngIf="currentSlide === 4">
+        <div class="pf-game-modal__course-end">
+          <div class="pf-game-modal__course-end-header">
+            <img src="./assets/img/congrats.png" alt="Congrats Icon">
+            <h4>Congratulations!</h4>
+            <p>You have finished the course about game and have unlocked the course about games in Physics</p>
+            <button class="btn btn-danger" (click)="bsModalRef.hide()">Proceed</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pf-game-modal__footer">
+    <div>
+      <button [hidden]="currentSlide <= 1" class="btn btn-primary" (click)="back()">
+        Back
+      </button>
+    </div>
+    <b>{{ currentSlide }} / 4</b>
+    <button [hidden]="currentSlide == 4" class="btn btn-primary" [disabled]="nextDisabled" (click)="next()">
+      Next
+    </button>
+  </div>
+</div>

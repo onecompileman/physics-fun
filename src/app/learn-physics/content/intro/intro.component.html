@@ -1,0 +1,94 @@
+<div class="pf-intro" *ngIf="(gameProgress$ | async) as gameProgress">
+  <div class="pf-intro__header">
+    <div class="pf-intro__header-content">
+      <div class="pf-intro__header-border"></div>
+      <h4 class="pf-intro__header-title">
+        Introduction to the Course
+      </h4>
+      <p>
+        This is an Interactive Learning site for learning the core concepts of physics. <br>
+        Feel free to click things around and interact as you learn physics on the proccess.
+      </p>
+    </div>
+  </div>
+  <div class="pf-intro__body">
+    <section class="pf-intro__body-topic">
+      <h4>Topics to cover</h4>
+      <p>Below contains the list of topics that will be discussed in the course.</p>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Speed</li>
+        <li class="list-group-item">Acceleration</li>
+        <li class="list-group-item">Vectors</li>
+        <li class="list-group-item">Force</li>
+        <li class="list-group-item">Ball Physics</li>
+      </ul>
+    </section>
+    <section class="pf-intro__body-physics">
+      <h4>What is Physics?</h4>
+      <div class="pf-intro__body-physics-description">
+        <div><img src="./assets/img/physics.png" alt="Physics Icon"></div>
+        <div>
+          <p><b class="text-danger">Physics</b> is the natural science that studies matter, its motion and behavior
+            through
+            space and time, and that
+            studies the related entities of energy and force. Physics is one of the most fundamental scientific
+            disciplines,
+            and its main goal is to understand how the universe behaves.
+          </p>
+        </div>
+      </div>
+
+    </section>
+    <section class="pf-intro__body-application">
+      <h4>Application of Physics in Computer Science</h4>
+      <div class="pf-intro__body-physics-description">
+        <div>
+          <p><b class="text-danger">Computer Animation</b> Computer animation physics or game physics involves the
+            introduction of the laws of physics into a simulation or game engine, particularly in 3D computer graphics,
+            for the purpose of making the effects appear more realistic to the observer. Typically, simulation physics
+            is only a close approximation to actual physics, and computation is performed using discrete values.
+          </p>
+        </div>
+        <div><img src="./assets/img/rocket.png" alt="Physics Icon"></div>
+      </div>
+
+    </section>
+
+    <section class="pf-intro__body-animation">
+      <h4>Physics Application</h4>
+      <p>To Learn about each Computer Science application of Physics, click each of the icon</p>
+      <div class="pf-intro__body-animation-content">
+        <div pfGameProgress [progressField]="'intro.animation.enabled'" [gameProgress]="gameProgress"
+          class="pf-intro__body-animation-item" (click)="openAnimationModal()">
+          <img class="pf-intro__physics-application-icon" height="150" src="./assets/img/animation.png"
+            alt="Animation Icon">
+          <div class="pf-intro__body-animation-title">
+            Animations
+          </div>
+        </div>
+        <div pfGameProgress [progressField]="'intro.games.enabled'" [gameProgress]="gameProgress"
+          class="pf-intro__body-animation-item" (click)="openGameModal()">
+          <img class="pf-intro__physics-application-icon" height="150" src="./assets/img/rocket.png" alt="Physics Icon">
+          <div class="pf-intro__body-animation-title">
+            <span>Games</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="pf-intro__speed">
+      <h4>Learn Physics More</h4>
+      <p>
+        Now we have seen how physics can be used for Computer Science. The next lessons is about using Computer Science
+        to learn Physics interactively
+      </p>
+      <p>
+        Next topic: <b class="text-danger">Speed</b>
+      </p>
+      <p>
+        <a [routerLink]="['learn','speed']" class="btn btn-danger">
+          Go to Speed
+        </a>
+      </p>
+    </section>
+  </div>
+</div>

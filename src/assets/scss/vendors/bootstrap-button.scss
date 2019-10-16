@@ -1,0 +1,22 @@
+@import '../theme-config.scss';
+
+.btn {
+  border-radius: 0;
+  border: none;
+}
+
+.btn-primary {
+  background-color: $primary;
+}
+
+.btn-primary:hover {
+  background-color: lighten($primary, 10%);
+}
+
+.btn-danger {
+  background-color: $danger;
+}
+
+.btn-danger:hover {
+  background-color: lighten($danger, 10%);
+}

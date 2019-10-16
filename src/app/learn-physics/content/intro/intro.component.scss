@@ -1,0 +1,96 @@
+@import '~src/assets/scss/theme-config';
+@import '~src/assets/scss/config';
+
+.#{$style-prefix}-intro {
+  &__header {
+    background-image: url('~src/assets/img/intro-header.jpg');
+    height: 300px;
+    background-size: cover;
+  }
+
+  &__header::after {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+    height: 100%;
+    width: 100%;
+    content: '';
+  }
+
+  &__header-border {
+    border-top: 5px solid $light;
+    width: 100px;
+    margin-bottom: 20px;
+  }
+
+  &__header-content {
+    position: absolute;
+    margin: 100px 0 0 40px;
+    color: $light;
+  }
+
+  &__header-title {
+    text-transform: uppercase;
+  }
+
+  &__body {
+    position: relative;
+
+    section {
+      padding: 40px;
+      display: flex;
+      min-height: 75vh;
+      flex-direction: column;
+      justify-content: center;
+
+      h4 {
+        margin-bottom: 30px;
+      }
+
+      p {
+        line-height: 35px;
+      }
+    }
+
+    section:nth-child(odd) {
+      background-color: $grey;
+    }
+
+    &-physics h4 {
+      border-top: 4px solid $primary;
+      padding-top: 10px;
+      display: inline-block;
+      margin-bottom: 30px;
+    }
+
+    &-physics p {
+      line-height: 35px;
+    }
+
+    &-physics-description {
+      display: flex;
+      align-items: center;
+    }
+
+    &-animation-content {
+      display: flex;
+    }
+
+    &-animation-item {
+      margin-right: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    &-animation-title {
+      background: $danger;
+      box-shadow: 2px 2px $dark;
+      padding: 5px;
+      width: 150px;
+      text-align: center;
+      color: $light;
+    }
+
+  }
+}

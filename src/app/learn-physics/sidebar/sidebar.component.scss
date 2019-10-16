@@ -1,0 +1,38 @@
+@import '~src/assets/scss/theme-config';
+@import '~src/assets/scss/config';
+
+.#{$style-prefix}-sidebar {
+
+  &__header.closed {
+    width: 120%;
+  }
+
+  &__header {
+    background-color: $danger;
+    height: 45px;
+    display: flex;
+    padding-left: 15px;
+    align-items: center;
+    color: $light;
+  }
+
+
+  &__nav-item {
+    font-size: 14px;
+  }
+
+  &__nav-item small {
+    font-size: 10px;
+  }
+
+}
+
+.list-group-item {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.active-nav {
+  background-color: $light3;
+  border-left: 8px solid $primary;
+}

@@ -1,0 +1,93 @@
+@import '~src/assets/scss/theme-config';
+@import '~src/assets/scss/config';
+
+.#{$style-prefix}-game-modal {
+
+  padding: 20px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $grey;
+    padding-bottom: 10px;
+
+    div {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__game-header {
+    margin-top: 10px;
+    height: 380px;
+    background-image: url('/assets/img/game-header.jpg');
+    background-size: cover;
+  }
+
+  &__game-header::after {
+    display: block;
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    height: 380px;
+    width: 100%;
+    content: '';
+  }
+
+  &__game-title {
+    color: $light;
+    position: absolute;
+    margin: 100px 50px 0 50px;
+    z-index: 999;
+  }
+
+  &__game-title h4 {
+    text-transform: uppercase;
+  }
+
+  &__game-border {
+    border-top: 5px solid $light;
+    width: 100px;
+    margin-bottom: 20px;
+  }
+
+  &__course-end-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__body {
+    min-height: 400px;
+  }
+
+  &__footer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__bird-header {
+    padding: 10px;
+  }
+
+  &__bird-body {
+    display: flex;
+
+    div {
+      padding: 10px;
+    }
+  }
+
+  &__bird-image img {
+    width: 100%;
+  }
+
+  &__bird-image {
+    flex: 4;
+  }
+
+  &__bird-content {
+    flex: 3;
+  }
+}

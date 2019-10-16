@@ -1,0 +1,42 @@
+<div class="pf-particle">
+  <div class="pf-particle__header">
+    <h5>
+      Particle System
+    </h5>
+    <p>
+      <small>A particle system is a technique in game physics, motion graphics, and computer graphics that uses many
+        minute sprites, 3D models, or other graphic objects to simulate certain kinds of "fuzzy" phenomena, which are
+        otherwise very hard to reproduce with conventional rendering techniques - usually highly chaotic systems,
+        natural phenomena, or processes caused by chemical reactions.
+        <br>
+      </small>
+      <i>Click on the screen to add particle-systems</i>
+    </p>
+  </div>
+  <div class="pf-particle__body">
+    <div class="pf-particle__tasks">
+      <div class="pf-particle__tasks-header">
+        <h5>Tasks</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <small><i>Complete the tasks to proceed</i></small>
+        </li>
+        <li class="list-group-item" [class.task-completed]="tasks1Complete">
+          <small>Click the screen once</small>
+        </li>
+        <li class="list-group-item" [class.task-completed]="tasks2Complete">
+          <small>Have 5 or more particle-systems on the screen ({{ particleCount }} / 5)</small>
+        </li>
+        <li class="list-group-item" [class.task-completed]="tasks3Complete">
+          <small>Have 10 or more particle-systems on the screen ({{ particleCount }} / 10)</small>
+        </li>
+      </ul>
+    </div>
+    <div class="pf-particle__content">
+      <div id="pfParticleCanvas" class="pf-particle__canvas-container">
+
+      </div>
+    </div>
+  </div>
+</div>

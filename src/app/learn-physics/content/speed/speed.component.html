@@ -1,0 +1,100 @@
+<div class="pf-speed">
+  <div class="pf-speed__header">
+    <div class="pf-speed__header-content">
+      <div class="pf-speed__header-border"></div>
+      <h4 class="pf-speed__header-title">
+        Introduction to Speed
+      </h4>
+      <p>
+        This section will define and discuss what speed in physics is. <br>
+        Compute for speed and learn the interactive and fun way.
+      </p>
+    </div>
+  </div>
+  <div class="pf-speed__body">
+    <section class="pf-speed__speed-definition">
+      <h4>
+        What is Speed?
+      </h4>
+      <div class="pf-speed__speed-content">
+        <div class="pf-speed__speed-image-container">
+          <img src="./assets/img/running-man.gif" alt="Running Man">
+        </div>
+        <div class="pf-speed__speed-description">
+          <p>
+            <b class="text-danger">Speed</b> is the distance traveled per unit of time. It is how fast an object is
+            moving. Speed is the scalar
+            quantity that is the magnitude of the velocity vector. It doesn't have a direction. Higher speed means an
+            object is moving faster. Lower speed means it is moving slower. If it isn't moving at all, it has zero
+            speed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pf-speed__speed-computation">
+      <h4>Compute for Speed</h4>
+      <div class="pf-speed__speed-content">
+        <div class="pf-speed__speed-description">
+          <h5>Formula: <small> s = d / t</small></h5>
+          <blockquote>
+            <ul>
+              <li><small><b>s</b> is the rate, or speed (sometimes denoted as v, for velocity)</small></li>
+              <li><small><b>d</b> is the distance moved</small></li>
+              <li><small><b>t</b> is the time it takes to complete the movement</small></li>
+            </ul>
+          </blockquote>
+          <span>Example: A car 2 <small>km</small> 180 <small>seconds</small></span>
+          <ul class="pf-speed__speed-formula">
+            <li>s = d / t</li>
+            <li>= 2 <small>km</small> / 180 <small>seconds</small></li>
+            <li>= 2 <small>km</small> / 0.05 <small>hour(s)</small></li>
+            <li><b>= 40 <small>km/h</small></b></li>
+          </ul>
+        </div>
+        <div class="pf-speed__speed-image-container">
+          <img src="./assets/img/car.gif" alt="Running Man">
+        </div>
+      </div>
+    </section>
+
+    <section class="pf-speed__interactive">
+      <h4>Interactive Example</h4>
+      <div class="pf-speed__interactive-canvas">
+        <pf-interactive></pf-interactive>
+      </div>
+    </section>
+
+    <section class="pf-speed__activities">
+      <h4>Knowledge Check</h4>
+      <div class="pf-speed__activities-container">
+        <!-- Slide 1 -->
+        <div class="pf-speed__slider-item" *ngIf="currentSlide === 1">
+          <img src="./assets/img/quiz.png" alt="Quiz Icon">
+          <p>Let's verify what you have learned in this course, answer interactive questions on the following slides.
+          </p>
+          <button class="btn btn-danger" (click)="next()">
+            Proceed
+          </button>
+        </div>
+        <!-- Slide 2 -->
+        <div class="pf-speed__slider-item" *ngIf="currentSlide === 2">
+          <div id="pfSpeedCanvas"></div>
+        </div>
+      </div>
+
+      <div class="pf-speed__activities-footer">
+        <div>
+          <button [hidden]="currentSlide <= 1" class="btn btn-primary" (click)="back()">
+            Back
+          </button>
+        </div>
+        <b class="margin-auto">{{ currentSlide }} / 3</b>
+        <button [hidden]="currentSlide == 3 || currentSlide === 1" class="btn btn-primary" [disabled]="nextDisabled"
+          (click)="next()">
+          Next
+        </button>
+      </div>
+    </section>
+  </div>
+</div>

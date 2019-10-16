@@ -1,0 +1,6 @@
+@import '../theme-config';
+
+.task-completed {
+  color: $success;
+  text-decoration: line-through;
+}

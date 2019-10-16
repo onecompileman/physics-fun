@@ -1,0 +1,40 @@
+<div class="pf-bubble">
+  <div class="pf-bubble__header">
+    <h5>
+      Bubble Screen Saver
+    </h5>
+    <p>
+      <small>One of the best example of computer animation is the bubble screen saver animation, made famous by
+        windows, bubbles in the screen move because of <b>Velocity</b>, which will be discussed later on this site.
+        <br>
+      </small>
+      <i>Click on the screen to add bubbles</i>
+    </p>
+  </div>
+  <div class="pf-bubble__body">
+    <div class="pf-bubble__tasks">
+      <div class="pf-bubble__tasks-header">
+        <h5>Tasks</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <small><i>Complete the tasks to proceed</i></small>
+        </li>
+        <li class="list-group-item" [class.task-completed]="tasks1Complete">
+          <small>Click the screen once</small>
+        </li>
+        <li class="list-group-item" [class.task-completed]="tasks2Complete">
+          <small>Have 10 or more bubbles on the screen ({{bubbleCount}} / 10)</small>
+        </li>
+        <li class="list-group-item" [class.task-completed]="tasks3Complete">
+          <small>Have 20 or more bubbles on the screen ({{bubbleCount}} / 20)</small>
+        </li>
+      </ul>
+    </div>
+    <div class="pf-bubble__content">
+      <div id="pfBubbleCanvas" class="pf-bubble__canvas-container">
+
+      </div>
+    </div>
+  </div>
+</div>

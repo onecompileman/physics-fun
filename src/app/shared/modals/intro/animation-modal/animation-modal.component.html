@@ -1,0 +1,56 @@
+<div class="pf-animation-modal">
+  <div class="pf-animation-modal__header">
+    <img src="/assets/img/animation.png" height="50">&nbsp;
+    <h4>Animations</h4>
+  </div>
+  <div class="pf-animation-modal__body">
+    <div class="pf-animation-modal__slider-container">
+      <!-- Slide 1 -->
+      <div class="pf-animation-modal__slider-item" *ngIf="currentSlide === 1">
+        <div class="pf-animation-modal__animation-header">
+          <div class="pf-animation-modal__animation-title">
+            <div class="pf-animation-modal__animation-border"></div>
+            <h4>About Animation</h4>
+            <p>Physically based animation is an area of interest within computer graphics concerned with the simulation
+              of physically plausible behaviors at interactive rates</p>
+            <p>This course will show example on how physics can be used in computer animations</p>
+            <br>
+            <div class="btn btn-danger" (click)="next()">
+              Start Course
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="pf-animation-modal__slider-item" *ngIf="currentSlide === 2">
+        <pf-bubble (completed)="onBubbleCompleted()"></pf-bubble>
+      </div>
+      <!-- Slide 3 -->
+      <div class="pf-animation-modal__slider-item" *ngIf="currentSlide === 3">
+        <pf-particle-system (completed)="onParticleSystemCompleted()"></pf-particle-system>
+      </div>
+      <!-- Slide 4 -->
+      <div class="pf-animation-modal__slider-item" *ngIf="currentSlide === 4">
+        <div class="pf-animation-modal__course-end">
+          <div class="pf-animation-modal__course-end-header">
+            <img src="./assets/img/congrats.png" alt="Congrats Icon">
+            <h4>Congratulations!</h4>
+            <p>You have finished the course about Animation and have unlocked the course about Games in Physics</p>
+            <button class="btn btn-danger" (click)="bsModalRef.hide()">Proceed</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pf-animation-modal__footer">
+    <div>
+      <button [hidden]="currentSlide <= 1" class="btn btn-primary" (click)="back()">
+        Back
+      </button>
+    </div>
+    <b>{{ currentSlide }} / 4</b>
+    <button [hidden]="currentSlide == 4" class="btn btn-primary" [disabled]="nextDisabled" (click)="next()">
+      Next
+    </button>
+  </div>
+</div>

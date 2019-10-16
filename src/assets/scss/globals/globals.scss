@@ -1,0 +1,22 @@
+@import '../theme-config.scss';
+
+.text-danger {
+  color: $danger;
+}
+
+.text-primary {
+  color: $primary !important;
+}
+
+.opacity-7 {
+  opacity: 0.7;
+}
+
+.disable-progress {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.margin-auto {
+  margin: auto;
+}

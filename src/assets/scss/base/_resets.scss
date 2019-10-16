@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+blockquote {
+  border-left: 5px solid $danger;
+  padding: 10px;
+  background-color: $light3;
+}
