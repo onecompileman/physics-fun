@@ -1,0 +1,63 @@
+<div class="pf-interactive">
+  <div class="pf-interactive__header">
+    <blockquote>
+      <p>Below is an interactive example, that show how speed affects how fast the two race car moves.
+        <br>Play around with the values below to and see the difference in the canvas.</p>
+    </blockquote>
+    <div class="pf-interactive__content">
+      <h4 class="text-primary">Gran Turismo 2019</h4>
+      <div class="pf-interactive__car-setting">
+        <div class="pf-interactive__car-content">
+          <img src="./assets/img/speed/cars/3.png" alt="Car 1">
+          <div class="pf-interactive__car-config">
+            <p><b class="text-danger">Chervolet Camaro</b></p>
+            <div>
+              <label>Initial Speed: </label>&nbsp;
+              <input type="number" name="car1Speed" min="0" max="100" *ngIf="(car1Speed$ | async) as car1Speed"
+                class="form-control pf-interactive__speed-input" (change)="onCar1SpeedChange($event.target.value)"
+                [value]="car1Speed"> km/h
+            </div>
+            <div>
+              <label>Acceleration: </label>&nbsp;
+              <input type="number" name="car1Acceleration" min="0" max="100"
+                *ngIf="(car1Acceleration$ | async) as car1Acceleration" class="form-control pf-interactive__speed-input"
+                (change)="onCar1AccelerationChange($event.target.value)" [value]="car1Acceleration"> m/s <sup>2</sup>
+            </div>
+            <div>
+              <label>Top Speed: </label>&nbsp;
+              <input type="number" name="car1TopSpeed" min="0" max="100" *ngIf="(car1TopSpeed$ | async) as car1TopSpeed"
+                class="form-control pf-interactive__speed-input" (change)="onCar1TopSpeedChange($event.target.value)"
+                [value]="car1TopSpeed"> km/h
+            </div>
+          </div>
+        </div>
+        <div class="pf-interactive__car-content">
+          <img src="./assets/img/speed/cars/2.png" alt="Car 1">
+          <div class="pf-interactive__car-config">
+            <p><b class="text-danger">Dodge Viper</b></p>
+            <div>
+              <label>Initial Speed: </label>&nbsp;
+              <input type="number" name="car2Speed" min="0" max="100" *ngIf="(car2Speed$ | async) as car2Speed"
+                class="form-control pf-interactive__speed-input" (change)="onCar2SpeedChange($event.target.value)"
+                [value]="car2Speed">
+              km/h
+            </div>
+            <div>
+              <label>Acceleration: </label>&nbsp;
+              <input type="number" name="car2Acceleration" min="0" max="100"
+                *ngIf="(car2Acceleration$ | async) as car2Acceleration" class="form-control pf-interactive__speed-input"
+                (change)="onCar2AccelerationChange($event.target.value)" [value]="car2Acceleration"> m/s <sup>2</sup>
+            </div>
+            <div>
+              <label>Top Speed: </label>&nbsp;
+              <input type="number" name="car2TopSpeed" min="0" max="100" *ngIf="(car2TopSpeed$ | async) as car2TopSpeed"
+                class="form-control pf-interactive__speed-input" (change)="onCar2TopSpeedChange($event.target.value)"
+                [value]="car2TopSpeed"> km/h
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pf-interactive__canvas-container" id="pfInteractiveAccelerationCanvas"></div>
+</div>

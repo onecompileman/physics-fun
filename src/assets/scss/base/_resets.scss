@@ -13,6 +13,8 @@ a:hover {
 
 blockquote {
   border-left: 5px solid $danger;
-  padding: 10px;
+  padding: 15px;
   background-color: $light3;
+  width: max-content;
+  max-width: 100%;
 }

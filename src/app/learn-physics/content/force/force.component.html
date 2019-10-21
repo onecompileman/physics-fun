@@ -1,3 +1,67 @@
-<p>
-  force works!
-</p>
+<div class="pf-force">
+  <div class="pf-force__header">
+    <div class="pf-force__header-content">
+      <div class="pf-force__header-border"></div>
+      <h4 class="pf-force__header-title">
+        Introduction to force
+      </h4>
+      <p>
+        This section will define and discuss what force in physics is. <br>
+        Compute for force and learn the interactive and fun way.
+      </p>
+    </div>
+  </div>
+  <div class="pf-force__body">
+    <section class="pf-force__force-definition">
+      <h4>
+        What is Force?
+      </h4>
+      <div class="pf-force__force-content">
+        <div class="pf-force__force-image-container">
+          <img src="./assets/img/force.png" alt="Force">
+        </div>
+        <div class="pf-force__force-description">
+          <p>
+            <b class="text-danger">Force</b> is any interaction that, when unopposed, will change the motion of an
+            object. A force can cause an object with mass to change its velocity (which includes to begin moving from a
+            state of rest), i.e., to accelerate.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Force computation -->
+    <section class="pf-force__force-computation">
+      <h4>Compute for Force</h4>
+      <div class="pf-force__force-content">
+        <div class="pf-force__force-description">
+          <h5>Formula: <small> F = m * a</small></h5>
+          <blockquote>
+            <ul>
+              <li><small><b>F</b> is the force</small></li>
+              <li><small><b>m</b> is the mass of the object</small></li>
+              <li><small><b>a</b> is the acceleration</small></li>
+            </ul>
+          </blockquote>
+          <span>Example: An apple with a mass of <b class="text-danger">0.1 kg</b> is falling, what is its
+            force?</span>
+          <ul class="pf-force__force-formula">
+            <li>F = m * a</li>
+            <li>= 0.1 <small>kg</small> * 9.8 m/s <sup>2</sup>&nbsp;(gravity)</li>
+            <li>= 0.98 kg m/s <sup>2</sup> or 0.98 N or Newton (denotes force)</li>
+          </ul>
+        </div>
+        <div class="pf-force__force-image-container">
+          <img src="./assets/img/falling-apple.gif" alt="Running Man">
+        </div>
+      </div>
+    </section>
+
+    <!-- Force Interactive -->
+    <section class="pf-acceleration__interactive">
+      <h4>Interactive Example</h4>
+      <div class="pf-acceleration__interactive-canvas">
+        <pf-interactive-force></pf-interactive-force>
+      </div>
+    </section>
+  </div>
+</div>

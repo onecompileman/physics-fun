@@ -13,6 +13,10 @@ import { BallPhysicsComponent } from './content/ball-physics/ball-physics.compon
 import { LearnPhysicsComponent } from './learn-physics.component';
 import { SharedModule } from '../shared/shared.module';
 import { InteractiveComponent } from './content/speed/components/interactive/interactive.component';
+import { InteractiveAccelerationComponent } from './content/acceleration/components/interactive-acceleration/interactive-acceleration.component';
+import { InteractiveVectorsComponent } from './content/vectors/components/interactive-vectors/interactive-vectors.component';
+import { InteractiveForceComponent } from './content/force/components/interactive-force/interactive-force.component';
+import { InteractiveBallComponent } from './content/ball-physics/components/interactive-ball/interactive-ball.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { InteractiveComponent } from './content/speed/components/interactive/int
     ForceComponent,
     BallPhysicsComponent,
     LearnPhysicsComponent,
-    InteractiveComponent],
+    InteractiveComponent,
+    InteractiveAccelerationComponent,
+    InteractiveVectorsComponent,
+    InteractiveForceComponent,
+    InteractiveBallComponent],
   imports: [
     CommonModule,
     LearnPhysicsRoutingModule,

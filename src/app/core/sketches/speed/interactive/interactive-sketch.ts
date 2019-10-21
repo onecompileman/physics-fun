@@ -13,6 +13,7 @@ export function InteractiveSketch(p: any, car1Speed$: BehaviorSubject<number>, c
     let car2;
     const kmPerPixels = 10;
     const points = [];
+    p.disableFriendlyErrors = true;
 
 
     p.preload = () => {

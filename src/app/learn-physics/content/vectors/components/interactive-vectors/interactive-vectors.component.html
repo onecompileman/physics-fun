@@ -1,0 +1,31 @@
+<div class="pf-interactive">
+  <div class="pf-interactive__header">
+    <blockquote>
+      <p>Below is an interactive example, that show how speed affects how fast the two race car moves.
+        <br>Click on the screen to add points for the ship to follow, then press <b class="text-danger">
+          Play
+        </b> to start ship following and <b class="text-danger">Reset</b> to reset the points</p>
+    </blockquote>
+    <p>Information about the content: </p>
+    <ul>
+      <li>
+        Points that are colored <b class="text-danger">red</b> indicates that it is the current point being followed
+      </li>
+      <li>
+        <b class="text-danger">Sub</b> means the difference of the current point to ship's point
+      </li>
+      <li>
+        Each points displays its coordinates
+      </li>
+    </ul>
+    <div>
+      <button (click)="play()" class="btn btn-danger">
+        Play
+      </button>&nbsp;
+      <button (click)="reset()" class="btn btn-danger">
+        Reset
+      </button>
+    </div>
+  </div>
+  <div class="pf-interactive__canvas-container" id="pfInteractiveVectorCanvas"></div>
+</div>

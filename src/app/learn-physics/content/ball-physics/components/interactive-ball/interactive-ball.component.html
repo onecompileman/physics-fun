@@ -1,0 +1,39 @@
+<div class="pf-interactive">
+  <div class="pf-interactive__header">
+    <blockquote>
+      <p>Below is an interactive example, that show how mass affects how fast the ball falls.
+        <br>Play around with the values below to and click the canvas to create balls.</p>
+    </blockquote>
+    <div class="pf-interactive__content">
+      <div class="pf-interactive__ball-setting">
+        <div class="pf-interactive__ball-content">
+          <div class="pf-interactive__ball-config">
+            <p><b class="text-danger">Ball Config</b></p>
+            <div>
+              <label>Mass: </label>&nbsp;
+              <input type="number" name="mass" min="0" max="100" [(ngModel)]="mass" (change)="changeMass()"
+                class="form-control pf-interactive__speed-input"> &nbsp; g
+            </div>
+            <div>
+              <label>Elasticity: </label>&nbsp;
+              <input type="number" name="elastic" min="0" max="100" [(ngModel)]="elastic" (change)="changeElastic()"
+                class="form-control pf-interactive__speed-input">
+            </div>
+            <div>
+              <label>Air Direction: </label>&nbsp;
+              <input type="number" name="airDirection" min="0" max="100" [(ngModel)]="airDirection"
+                (change)="changeAirDirection()" class="form-control pf-interactive__speed-input">
+            </div>
+            <div>
+              <label>Size: </label>&nbsp;
+              <input type="number" name="size" min="20" max="100" [(ngModel)]="size" (change)="changeSize()"
+                class="form-control pf-interactive__speed-input"> &nbsp; px
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="pf-interactive__canvas-container" id="pfInteractiveBallCanvas"></div>
+</div>

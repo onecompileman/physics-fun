@@ -17,5 +17,24 @@ export const InitialGameProgressData: GameProgress = Object.freeze({
                 pong: false
             }
         }
+    },
+    speed: {
+        enabled: false,
+        activities: {
+            activity1: true,
+            activity2: false
+        }
+    },
+    acceleration: {
+        enabled: false,
+        activities: {
+            activity1: true
+        }
+    },
+    vector: {
+        enabled: false,
+        activities: {
+            activity1: true
+        }
     }
 });

@@ -1,3 +1,153 @@
-<p>
-  vectors works!
-</p>
+<div class="pf-vector">
+  <div class="pf-vector__header">
+    <div class="pf-vector__header-content">
+      <div class="pf-vector__header-border"></div>
+      <h4 class="pf-vector__header-title">
+        Introduction to vector
+      </h4>
+      <p>
+        This section will define and discuss what vector in physics is. <br>
+        Compute for vector and learn the interactive and fun way.
+      </p>
+    </div>
+  </div>
+  <div class="pf-vector__body">
+    <!-- vector Definition -->
+    <section class="pf-vector__vector-definition">
+      <h4>
+        What is Vector?
+      </h4>
+      <div class="pf-vector__vector-content">
+        <div class="pf-vector__vector-image-container">
+          <img src="./assets/img/vector.png" alt="Vector">
+        </div>
+        <div class="pf-vector__vector-description">
+          <p>
+            <b class="text-danger">Vector</b>, in physics, a quantity that has both magnitude and direction. It
+            is typically represented by an arrow whose direction is the same as that of the quantity and whose length is
+            proportional to the quantity's magnitude. It is defined as the location of the object in coordinates <b>(x,
+              y)</b>
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- vector Computation -->
+    <section class="pf-vector__vector-computation">
+      <h4>Operations for Vector</h4>
+      <div class="pf-vector__vector-content">
+        <div class="pf-vector__vector-description">
+          <h4 class="text-danger">Subtraction</h4>
+          <img src="./assets/img/vector-subtract.png" alt="Vector Subtract">
+          <div class="pf-vector__vector-operation">
+            <p>Subtracting vector from another vector, involves steps:</p>
+            <ul>
+              <li>first we reverse the direction of the vector we want to subtract,</li>
+              <li>then add them as usual</li>
+            </ul>
+            <blockquote>
+              <b>Example: subtract k = (4,5) from v = (12,2)</b>
+              <ul>
+                <li>a = v + −k</li>
+                <li>a = (12,2) + −(4,5) = (12,2) + (−4,−5) = (12−4,2−5) = (8,−3)</li>
+              </ul>
+            </blockquote>
+
+          </div>
+          <h4 class="text-danger">Addition</h4>
+          <img src="./assets/img/vector-add1.png" alt="Vector Add">
+          <div class="pf-vector__vector-operation">
+            <p>Adding Vectors, We can then add vectors by adding the x parts and adding the y parts </p>
+            <blockquote>
+              <b>Example: add the vectors a = (8,13) and b = (26,7)</b>
+              <ul>
+                <li>c = a + b</li>
+                <li>c = (8,13) + (26,7) = (8+26,13+7) = (34,20)</li>
+              </ul>
+            </blockquote>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Vector Interactive -->
+    <section class="pf-vector__interactive">
+      <h4>Interactive Example</h4>
+      <div class="pf-vector__interactive-canvas">
+        <pf-interactive-vectors></pf-interactive-vectors>
+      </div>
+    </section>
+
+    <!-- Vector Knowledge check -->
+    <section class="pf-vector__activities">
+      <h4>Knowledge Check</h4>
+      <div class="pf-vector__activities-container">
+        <!-- Slide 1 -->
+        <div class="pf-vector__slider-item" [hidden]="currentSlide !== 1">
+          <img src="./assets/img/quiz.png" alt="Quiz Icon">
+          <p>Let's verify what you have learned in this course, answer interactive questions on the following slides.
+          </p>
+          <button class="btn btn-danger" (click)="next()">
+            Proceed
+          </button>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="pf-vector__slider-item" [hidden]="currentSlide !== 2">
+          <h5>Problem 1</h5>
+          <p><b class="text-danger">Reach the island:</b>&nbsp;
+            <br>
+            <small>Help the pirate ship reach the island full of treasure, by giving us the difference from the
+              ship's location to the current point to go to.
+            </small>
+          </p>
+          <blockquote>
+            Current Vector:&nbsp; ({{ currentVector?.x }}, {{ currentVector?.y }})
+            <br>
+            Destination Vector:&nbsp; ({{ destinationVector?.x }}, {{ destinationVector?.y }})
+
+          </blockquote>
+          <div class="pf-vector__answer-container">
+            <b class="text-danger">Answer: &nbsp;</b>
+            <p>Difference Vector:</p>
+            <label><b class="text-danger">x:</b></label>&nbsp;
+            <input type="number" name="x" [(ngModel)]="x" class="form-control pf-vector__input"> &nbsp;
+            <label><b class="text-danger">y:</b></label>&nbsp;
+            <input type="number" name="y" [(ngModel)]="y" class="form-control pf-vector__input"> &nbsp;
+            <button (click)="checkAnswer()" class="btn btn-danger" [disabled]="isCheckingAnswer1">
+              <i *ngIf="isCheckingAnswer1" class="fa fa-spinner fa-spin">&nbsp;</i>Check
+            </button>
+          </div>
+          <div id="pfVectorCanvas"></div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="pf-vector__slider-item" *ngIf="currentSlide === 3">
+          <div class="pf-vector__course-end">
+            <div class="pf-vector__course-end-header">
+              <img src="./assets/img/congrats.png" alt="Congrats Icon">
+              <h4>Congratulations!</h4>
+              <p>You have finished the course about vector and have unlocked the course about Vector in Physics
+              </p>
+              <a [routerLink]="['learn','acceleration']" class="btn btn-danger">Proceed</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pf-vector__activities-footer">
+        <div>
+          <button [hidden]="currentSlide <= 1" class="btn btn-primary" (click)="back()">
+            Back
+          </button>
+        </div>
+        <b class="margin-auto">{{ currentSlide }} / 3</b>
+        <button [hidden]="currentSlide == 3 || currentSlide === 1" class="btn btn-primary" [disabled]="nextDisabled"
+          (click)="next()">
+          Next
+        </button>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import * as fromDirectives from './directives';
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -19,11 +20,13 @@ import { FlappyBirdComponent } from './modals/intro/game-modal/components/flappy
   ],
   imports: [
     CommonModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    FormsModule
   ],
   exports: [
     ...fromDirectives.directives,
-    ModalModule
+    ModalModule,
+    FormsModule
   ],
   entryComponents: [
     AnimationModalComponent,

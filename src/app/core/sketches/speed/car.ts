@@ -8,6 +8,9 @@ export class Car {
     img: any;
     flowPathSystem: FlowPathSystem;
     speed: number;
+    topSpeed: number;
+    acceleration: number;
+    totalDistanceInPixels = 0;
     rotate: number;
     p5: any;
 
@@ -35,14 +38,26 @@ export class Car {
         const currentFollowVector = this.flowPathSystem.getCurrentVectorPoint();
         this.vel = currentFollowVector.copy().sub(this.pos);
         this.rotate = this.vel.heading() + this.p5.HALF_PI;
-        // console.log(this.vel);
         this.vel.normalize();
         this.vel.mult(this.speed);
+        if (this.acceleration && this.topSpeed) {
+            this.speed += ((this.acceleration / 5) / 60);
+            this.speed = this.p5.constrain(this.speed, 0, this.topSpeed);
+        }
+        this.totalDistanceInPixels += this.speed;
         this.pos.add(this.vel);
     }
 
     setSpeed(speed): void {
         this.speed = speed;
+    }
+
+    setTopSpeed(topSpeed): void {
+        this.topSpeed = topSpeed;
+    }
+
+    setAcceleration(acceleration): void {
+        this.acceleration = acceleration;
     }
 
 }

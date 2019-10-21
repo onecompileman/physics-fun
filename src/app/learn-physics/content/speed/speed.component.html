@@ -44,7 +44,8 @@
               <li><small><b>t</b> is the time it takes to complete the movement</small></li>
             </ul>
           </blockquote>
-          <span>Example: A car 2 <small>km</small> 180 <small>seconds</small></span>
+          <span>Example: A car travelled 2 <small>km</small> in 180 <small>seconds</small>&nbsp;, what is its
+            speed?</span>
           <ul class="pf-speed__speed-formula">
             <li>s = d / t</li>
             <li>= 2 <small>km</small> / 180 <small>seconds</small></li>
@@ -69,7 +70,7 @@
       <h4>Knowledge Check</h4>
       <div class="pf-speed__activities-container">
         <!-- Slide 1 -->
-        <div class="pf-speed__slider-item" *ngIf="currentSlide === 1">
+        <div class="pf-speed__slider-item" [hidden]="currentSlide !== 1">
           <img src="./assets/img/quiz.png" alt="Quiz Icon">
           <p>Let's verify what you have learned in this course, answer interactive questions on the following slides.
           </p>
@@ -77,9 +78,58 @@
             Proceed
           </button>
         </div>
+
         <!-- Slide 2 -->
-        <div class="pf-speed__slider-item" *ngIf="currentSlide === 2">
+        <div class="pf-speed__slider-item" [hidden]="currentSlide !== 2">
+          <h5>Problem 1</h5>
+          <p><b class="text-danger">Find for speed:</b>&nbsp;
+            <small>Race car is <b class="text-danger">3km</b> away from the finished line, what should be the car's
+              speed to finished the race <b class="text-danger">3 minutes</b></small>
+          </p>
+          <blockquote>
+            <b class="text-danger">Formula:&nbsp;</b> s = d / t
+          </blockquote>
+          <div class="pf-speed__answer-container">
+            <b class="text-danger">Answer: &nbsp;</b>
+            <input type="number" name="answer1" [(ngModel)]="speed" min="0" max="150"
+              class="form-control pf-speed__input"> &nbsp; km/h
+            <button (click)="checkAnswer1()" class="btn btn-danger" [disabled]="isCheckingAnswer1 || !speed">
+              <i *ngIf="isCheckingAnswer1" class="fa fa-spinner fa-spin">&nbsp;</i>Check
+            </button>
+          </div>
           <div id="pfSpeedCanvas"></div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="pf-speed__slider-item" [hidden]="currentSlide !== 3">
+          <h5>Problem 2</h5>
+          <p><b class="text-danger">Find for distance:</b>&nbsp;
+            <small>Race car is running <b class="text-danger">90 km/h</b> for <b class="text-danger">6 minutes</b>
+              , how far did it travel? </small>
+          </p>
+          <blockquote>
+            <b class="text-danger">Formula:&nbsp;</b> d = s * t
+          </blockquote>
+          <div class="pf-speed__answer-container">
+            <b class="text-danger">Answer: &nbsp;</b>
+            <input type="number" name="answer1" [(ngModel)]="distance" min="0" max="10"
+              class="form-control pf-speed__input"> &nbsp; km
+            <button (click)="checkAnswer2()" class="btn btn-danger" [disabled]="isCheckingAnswer2 || !distance">
+              <i *ngIf="isCheckingAnswer2" class="fa fa-spinner fa-spin">&nbsp;</i>Check
+            </button>
+          </div>
+          <div id="pfSpeedCanvas1"></div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="pf-speed__slider-item" *ngIf="currentSlide === 4">
+          <div class="pf-speed__course-end">
+            <div class="pf-speed__course-end-header">
+              <img src="./assets/img/congrats.png" alt="Congrats Icon">
+              <h4>Congratulations!</h4>
+              <p>You have finished the course about Speed and have unlocked the course about Acceleration in Physics</p>
+              <a [routerLink]="['learn','acceleration']" class="btn btn-danger">Proceed</a>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -89,8 +139,8 @@
             Back
           </button>
         </div>
-        <b class="margin-auto">{{ currentSlide }} / 3</b>
-        <button [hidden]="currentSlide == 3 || currentSlide === 1" class="btn btn-primary" [disabled]="nextDisabled"
+        <b class="margin-auto">{{ currentSlide }} / 4</b>
+        <button [hidden]="currentSlide == 4 || currentSlide === 1" class="btn btn-primary" [disabled]="nextDisabled"
           (click)="next()">
           Next
         </button>

@@ -25,7 +25,10 @@ export class FlowPathSystem {
             } else {
                 this.p5.fill(255);
             }
-            this.p5.ellipse(0, 0, 20, 20);
+            this.p5.ellipse(0, 0, 10, 10);
+            this.p5.fill(0);
+            this.p5.textSize(10);
+            this.p5.text(`(${Math.round(vector.x)}, ${Math.round(vector.y)})`, -15, -10);
             this.p5.pop();
         });
     }

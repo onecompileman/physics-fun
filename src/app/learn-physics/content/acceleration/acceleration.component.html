@@ -1,3 +1,134 @@
-<p>
-  acceleration works!
-</p>
+<div class="pf-acceleration">
+  <div class="pf-acceleration__header">
+    <div class="pf-acceleration__header-content">
+      <div class="pf-acceleration__header-border"></div>
+      <h4 class="pf-acceleration__header-title">
+        Introduction to Acceleration
+      </h4>
+      <p>
+        This section will define and discuss what acceleration in physics is. <br>
+        Compute for acceleration and learn the interactive and fun way.
+      </p>
+    </div>
+  </div>
+  <div class="pf-acceleration__body">
+    <!-- Acceleration Definition -->
+    <section class="pf-acceleration__acceleration-definition">
+      <h4>
+        What is Acceleration?
+      </h4>
+      <div class="pf-acceleration__acceleration-content">
+        <div class="pf-acceleration__acceleration-image-container">
+          <img src="./assets/img/motocycle-rider.gif" alt="Motorcycle Rider">
+        </div>
+        <div class="pf-acceleration__acceleration-description">
+          <p>
+            <b class="text-danger">Acceleration</b> is the rate of change of velocity of an object with respect to time.
+            An object's acceleration is the net result of all forces acting on the object, as described by Newton's
+            Second Law. The SI unit for acceleration is metre per second squared
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Acceleration Computation -->
+    <section class="pf-acceleration__acceleration-computation">
+      <h4>Compute for Acceleration</h4>
+      <div class="pf-acceleration__acceleration-content">
+        <div class="pf-acceleration__acceleration-description">
+          <blockquote>
+            <h5>Formula: <small> Acceleration (m/s <sup>2</sup>) = Change in Velocity (m/s) / Time (s)</small></h5>
+          </blockquote>
+          <span>Example: A rocket flying at <small>200 km/h</small> and accelerates to 250 km/h in just <small>2
+              seconds</small>&nbsp;, what is its
+            acceleration?</span>
+          <br>
+          <ul class="pf-acceleration__acceleration-formula">
+            <li>Acceleration = Change in Velocity (m/s) / t (s)</li>
+            <li>= (250 <small>km/h</small> - 200 <small>km/h</small>) / 2 <small>seconds</small></li>
+            <li>= 50 <small>km/h</small> / 2 <small>seconds</small></li>
+            <li>Convert values to <b>m/s</b></li>
+            <li>= 13.9 / 2 <small>seconds</small></li>
+            <li><b>= 6.95 <small>m/s <sup>2</sup></small></b></li>
+          </ul>
+        </div>
+        <div class="pf-acceleration__acceleration-image-container">
+          <img src="./assets/img/rocket-ship.gif" alt="Rocket Ship">
+        </div>
+      </div>
+    </section>
+    <!-- Acceleration interactive -->
+    <section class="pf-acceleration__interactive">
+      <h4>Interactive Example</h4>
+      <div class="pf-acceleration__interactive-canvas">
+        <pf-interactive-acceleration></pf-interactive-acceleration>
+      </div>
+    </section>
+
+    <!-- Acceleration Knowledge Check -->
+    <section class="pf-acceleration__activities">
+      <h4>Knowledge Check</h4>
+      <div class="pf-acceleration__activities-container">
+        <!-- Slide 1 -->
+        <div class="pf-acceleration__slider-item" [hidden]="currentSlide !== 1">
+          <img src="./assets/img/quiz.png" alt="Quiz Icon">
+          <p>Let's verify what you have learned in this course, answer interactive questions on the following slides.
+          </p>
+          <button class="btn btn-danger" (click)="next()">
+            Proceed
+          </button>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="pf-acceleration__slider-item" [hidden]="currentSlide !== 2">
+          <h5>Problem 1</h5>
+          <p><b class="text-danger">Find for acceleration:</b>&nbsp;
+            <small>Race car is running <b class="text-danger">50 km/h</b> and have accelerated to
+              <b class="text-danger">82.4 km/h</b> in <b class="text-danger">3 seconds</b></small>,
+            What is its acceleration?
+
+          </p>
+          <blockquote>
+            <b class="text-danger">Formula:&nbsp;</b> <small> Acceleration (m/s <sup>2</sup>) = Change in Velocity (m/s)
+              / Time (s)</small>
+          </blockquote>
+          <div class="pf-acceleration__answer-container">
+            <b class="text-danger">Answer: &nbsp;</b>
+            <input type="number" name="answer1" [(ngModel)]="acceleration" min="0" max="150"
+              class="form-control pf-acceleration__input"> &nbsp; m/s <sup>2</sup> &nbsp;
+            <button (click)="checkAnswer1()" class="btn btn-danger" [disabled]="isCheckingAnswer1 || !acceleration">
+              <i *ngIf="isCheckingAnswer1" class="fa fa-spinner fa-spin">&nbsp;</i>Check
+            </button>
+          </div>
+          <div id="pfAccelerationCanvas"></div>
+        </div>
+
+
+        <!-- Slide 3 -->
+        <div class="pf-acceleration__slider-item" *ngIf="currentSlide === 3">
+          <div class="pf-acceleration__course-end">
+            <div class="pf-acceleration__course-end-header">
+              <img src="./assets/img/congrats.png" alt="Congrats Icon">
+              <h4>Congratulations!</h4>
+              <p>You have finished the course about Acceleration and have unlocked the course about Vector in Physics
+              </p>
+              <a [routerLink]="['learn','acceleration']" class="btn btn-danger">Proceed</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pf-acceleration__activities-footer">
+        <div>
+          <button [hidden]="currentSlide <= 1" class="btn btn-primary" (click)="back()">
+            Back
+          </button>
+        </div>
+        <b class="margin-auto">{{ currentSlide }} / 3</b>
+        <button [hidden]="currentSlide == 3 || currentSlide === 1" class="btn btn-primary" [disabled]="nextDisabled"
+          (click)="next()">
+          Next
+        </button>
+      </div>
+    </section>
+  </div>
+</div>

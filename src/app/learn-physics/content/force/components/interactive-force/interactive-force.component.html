@@ -1,0 +1,32 @@
+<div class="pf-interactive">
+  <div class="pf-interactive__header">
+    <blockquote>
+      <p>Below is an interactive example, that show how mass affects how fast the apple falls.
+        <br>Play around with the values below to and click the canvas to create apples.</p>
+    </blockquote>
+    <div class="pf-interactive__content">
+      <div class="pf-interactive__apple-setting">
+        <div class="pf-interactive__apple-content">
+          <img src="./assets/img/force/apple.png" alt="Apple">
+          <div class="pf-interactive__apple-config">
+            <p><b class="text-danger">Apple</b></p>
+            <div>
+              <label>Acceleration: </label>&nbsp;
+              <span>{{ gravity }} m/s <sup>2</sup></span>
+            </div>
+            <div>
+              <label>Mass: </label>&nbsp;
+              <input type="number" name="apple1Acceleration" min="0" max="100" [(ngModel)]="mass"
+                (change)="changeMass()" class="form-control pf-interactive__speed-input"> g
+            </div>
+            <div>
+              <label>Force: </label>&nbsp; {{ mass * gravity | number: '.2-2' }} N
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="pf-interactive__canvas-container" id="pfInteractiveAppleCanvas"></div>
+</div>
